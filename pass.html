@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+    <title>
+        Getting started with Javascript
+    </title>
+ 
+<body>
+
+<h2>Pass Phrase by Pathuri Varun Reddy</h2>
+
+<form>
+    <label for="form1_password">Enter the secret phrase </label>
+    <input type ="password" id="form1_password" name="form1_password" value="Let me in" min=10 max=50 step=2 value=30> <br>
+
+    <label for="form1_phrase">Enter a phrase </label>
+    <input type ="text" id="form1_phrase" name="form1_phrase" autofocus> <br>
+
+    <input type="button" onclick="processPhrase()" value="Check the phrase">
+</form>
+
+
+<p id="result">This text will be replaced </p>
+
+<script> 
+
+let correct=0
+    let wrong=0
+function processPhrase (){
+   
+    console.log("Getting form values")
+    password = document.getElementById("form1_password").value
+    phrase = document.getElementById("form1_phrase").value
+    if(password==phrase)
+    {
+        correct++;
+        alert("Access allowed")
+    }
+    else{
+        wrong++;
+        alert("Access denied")
+    }
+    //confirmed = confirm("Are these the values? "+age+" and "+nick)
+    out = document.getElementById("result")
+    
+        out.innerHTML = "Correct: "+correct +" Wrong: "+ wrong
+   
+    
+}
+</script>
+
+</body>
+</html> 
