@@ -23,6 +23,21 @@
 
 <p id="result">This text will be replaced </p>
 
+<form>
+    <input type="radio" id="rg1_plus" name="operation" value="plus" onclick="processRadio()">
+    <label for="rg1_plus">+</label></br>
+
+    <input type="radio" id="rg1_minus" name="operation" value="minus" onclick="processRadio()">
+    <label for="rg1_minus">-</label></br>
+
+    <input type="radio" id="rg1_times" name="operation" value="times" onclick="processRadio()">
+    <label for="rg1_times">*</label></br>
+
+    <input type="radio" id="rg1_divide" name="operation" value="divide" onclick="processRadio()">
+    <label for="rg1_divide">/</label></br>
+</form>
+<p id="radioResult">This text will be replaced </p>
+
 <script> 
 
 function powers (){
@@ -39,6 +54,25 @@ function powers (){
         
     }
     out.innerHTML="Powers of "+base+" are: "+result;
+}
+
+function processRadio() {
+    base = document.getElementById("form1_base").value
+    expo = document.getElementById("form1_expo").value
+    plus = document.getElementById("rg1_plus").checked
+    minus = document.getElementById("rg1_minus").checked
+    times = document.getElementById("rg1_times").checked
+    divide = document.getElementById("rg1_divide").checked
+    result = document.getElementById("radioResult")
+
+    if(plus)
+    result.innerHTML = +base + +expo
+    else if(minus)
+    result.innerHTML = base - expo
+    else if(times)
+    result.innerHTML = base * expo
+    else
+    result.innerHTML = base / expo
 }
 </script>
 
